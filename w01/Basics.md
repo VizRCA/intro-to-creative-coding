@@ -129,7 +129,7 @@ fill(w);
 rect(p,p,w,w);
 ```
 
-But doing this sort of things in a long list is wasteful, so use a for loop.
+But doing this sort of things in a long list is wasteful, so use a loop.
 
 ## For Loops
 
@@ -220,6 +220,7 @@ popMatrix ( );
 ```
 
 ## Setup and Draw
+
 the built-in functions of `setup` and `draw` allow for motion and repeat drawing:
 
 ```processing
