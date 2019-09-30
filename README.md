@@ -60,6 +60,7 @@ text ("hello", 10, 20);   // display text at x:10, y:20
 ## Syntax Examples
 
 [Programming Syntax is the words, phrase and context that make up a correctly structured piece of source code.](https://en.wikipedia.org/wiki/Syntax_(programming_languages))
+
 ```processing
 //CODE SYNTAX EXAMPLES
 
@@ -104,6 +105,7 @@ void draw ( ) {
 ## Variable Types
 Variables are used to name and store pieces of data.
 Variables are created by setting the data type, the name and the value of the variable:
+
 ```processing
 // VARIABLE TYPES
 //  
