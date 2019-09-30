@@ -30,7 +30,6 @@ Processing has its own set of functions:
 A full list of Processing functions can be found at https://processing.org/reference/
 
 ```processing
-// BASIC FUNCTIONS
 
 // All functions end with parenthesis ( ) and a semi colon ;
 smooth ();              // smooth the graphics on screen.
@@ -62,7 +61,6 @@ text ("hello", 10, 20);   // display text at x:10, y:20
 [Programming Syntax is the words, phrase and context that make up a correctly structured piece of source code.](https://en.wikipedia.org/wiki/Syntax_(programming_languages))
 
 ```processing
-//CODE SYNTAX EXAMPLES
 
 //COMMENTS (//) 
 // Using the double forward slash sign creates comments which allows you to add 'notes' to the code.
@@ -107,9 +105,6 @@ Variables are used to name and store pieces of data.
 Variables are created by setting the data type, the name and the value of the variable:
 
 ```processing
-// VARIABLE TYPES
-//  
-
 // create a variable called myVar with a starting value of 100.
 int myVar = 100; 
 
@@ -168,7 +163,6 @@ If the condition is TRUE then the code within the block is executed.
 Otherwise it is ignored. 
 
 ```processing
-// CONDITIONAL Statements ('if' statements)
 
 /* Values of variables are tested using standard comparison operators: 
  >   Greater Than 
@@ -217,7 +211,7 @@ else {
 A for loop repeats line(s) of code a set number of times.
 
 ```processing
-// FOR LOOPS. 
+// FOR LOOP 
 
 // the following is an example of a for loop which loops 10 times. 
 // the variable 'i' is used to count the loop
@@ -232,6 +226,29 @@ for (int i=0; i<10; i++) {
 
 // the result is an output of  "0 1 2 3 4 5 6 7 8 9"
 ```
+
+While loops are similar but read in a different way:
+
+```processing
+// WHILE LOOP. 
+
+// the following is an example of a while loop which loops 10 times. 
+// the variable 'i' is used to count the loop
+// i starts at 0 (i=0)
+// the loop is repeated whilst i is less than 10 (i<10) 
+// after each loop i is increased by 1 (i++) 
+
+int i = 0;
+while(i < 10){
+  println (i); // outputs the value of 'i' during each loop
+  i++;
+}
+
+// the result is an output of  "0 1 2 3 4 5 6 7 8 9"
+
+```
+
+Use the one that makes sense to you!
 
 ## User Defined Functions
 
