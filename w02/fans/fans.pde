@@ -46,7 +46,7 @@ void draw()
     drawRing(l0, l1, fans * 3);
   }
   
-  // saveFrame();
+  saveFrame("output.png");
   noLoop();
 }
 

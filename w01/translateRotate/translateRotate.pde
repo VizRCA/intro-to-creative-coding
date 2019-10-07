@@ -1,5 +1,7 @@
+
 // All the rectangles are drawn at 0, 0
-// Translate is used to move the co-ordinate grid - and reposition the 0, 0 point on the screen 
+// Translate is used to move the co-ordinate grid - 
+// and reposition the 0, 0 point on the screen 
 // This has the effect of shifting and rotating the shapes. 
 // Using translation is like moving and rotating a grid of graph paper before drawing.
 
