@@ -15,12 +15,24 @@ for (int y = 4; y < width; y += 16)
   for (int x = 4; x < width; x += 16) 
   {  
     // 1. Generate random number, stored in a variable, for each cell
-
+    float rNum = random(100);
     // 2. Write a conditional to check the random number 
     //    and do different drawing function based on 60:30:10 probability
     // Tip --> you will need the following drawing functions
     // rect(x, y, 8, 8);
     // ellipse(x, y, 8, 8);
     // line(x, y, x+8, y+8);    
+    if (rNum < 60)
+    {
+      rect(x, y, 8, 8);
+    }
+    else if ( rNum >= 60 && rNum < 90)
+    {
+      ellipse(x, y, 8, 8);
+    }
+    else 
+    {
+     line(x, y, x+8, y+8); 
+    }
   }
 }
