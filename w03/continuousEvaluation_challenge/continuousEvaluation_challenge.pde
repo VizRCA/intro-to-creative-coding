@@ -1,7 +1,7 @@
 /** Task
  *  The shape will not move. What do you need to do to fix it?
  */
-int position;
+float position;
 
 void setup() {
   size(800, 600);
