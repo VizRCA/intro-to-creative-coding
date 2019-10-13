@@ -28,8 +28,4 @@ size(800, 600);
 background(255);
 noStroke();
 
-for (int i = 0; i < grays.length; i++) {
-  fill(grays[i]);
-  int xPosition = 50 + 100*i;
-  ellipse(xPosition, 300, 50, 50);
-}
+// Do here
