@@ -23,13 +23,13 @@ void draw() {
   
   // Cycle through the array, using a different entry on each frame. 
   // Using modulo (%) like this is faster than moving all the values over.
-  int which = frameCount % num;
-  mx[which] = mouseX;
-  my[which] = mouseY;
+  int newPosIndex = frameCount % num;
+  mx[newPosIndex] = mouseX;
+  my[newPosIndex] = mouseY;
   
   for (int i = 0; i < num; i++) {
     // which+1 is the smallest (the oldest in the array)
-    int index = (which+1 + i) % num;
+    int index = (newPosIndex+1 + i) % num;
     ellipse(mx[index], my[index], i, i);
   }
 }
