@@ -1,8 +1,10 @@
+// A class is a combination of properites (variables) and methods (functions) 
 // The Circle class is a 'template' from which lots of circles can be created 
 // each instance of the circle will have the same functions 
 // but each can have its own x, y, gravity, size and speed attributes.
 
 class Ball { 
+  // set the properties (variables) of the ball class
   float xpos; 
   float ypos; 
   float gravity; 
@@ -19,8 +21,10 @@ class Ball {
     wind = w; 
     size = s;
   }
+  
+  // Each class has a set of functions to define what the class does 
 
-  // a function to run the other functions in the class
+  // Functions to run the other functions in the class
   void update ( ) { 
     updateSpeedAndLocation();
   }
@@ -30,7 +34,8 @@ class Ball {
    drawShape(); 
   }
 
-
+  // Functions to change data in the class instance
+  
   // update the speed and location of the object. 
   void updateSpeedAndLocation ( ) { 
     // add gravity to speed
@@ -48,7 +53,7 @@ class Ball {
     }
   }
 
-
+  // Functions to communicate with other parts of the program architecture
 
   // draw the shape:
   void drawShape( ) { 
