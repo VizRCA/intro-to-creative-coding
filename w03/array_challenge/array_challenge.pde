@@ -29,3 +29,16 @@ background(255);
 noStroke();
 
 // Do here
+
+// Write a for loop that has an ending condition of 8
+for (int i = 0; i < grays.length; i++)
+{
+   // Inside it
+   // set the fill color using and array index to the "grays" array
+   fill(grays[i]);
+   int xPosition = 50 + 100*i;
+   // draw a circle at a multiple of the current for loop index
+   ellipse(xPosition, 300, 50, 50);
+   fill(0);
+   text( grays[i],xPosition, 350);
+}  

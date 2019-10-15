@@ -3,10 +3,10 @@
  *  'bounce' is added by reversing the speed when the object reaches the foot of the display window
  */
 // set up variables:
-float gravity = 0.8;   // a set 'gravity' value
+float gravity = 0.98;   // a set 'gravity' value
 float speed = 0;       // speed:  starts at 0 but increases with gravity
 float ypos = 60;       // the starting y-location of the ball. 
-float floorForce = -0.95; // Tip, you can get the bounce using this force
+float floorForce = -0.75; // Tip, you can get the bounce using this force
 
 void setup( ) { 
   size (600, 600);
@@ -23,10 +23,15 @@ void draw( ) {
   ypos = ypos + speed; 
   
   // TODO add floor wrapping logic 
+  if ( ypos > height-30)
+    ypos = height-30;
   
   // draw the ball
   ellipse(300, ypos, 60, 60);
   
   // TODO add the bounce effect
-  
+  if( ypos >= height-30 )
+  {
+   speed *= floorForce; 
+  }
 }

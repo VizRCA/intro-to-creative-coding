@@ -7,6 +7,8 @@
 float ballDiameter = 30;
 float positionX;
 float velocityX;
+float positionY;
+float velocityY;
 
 void setup() {
   size(800, 600);
@@ -14,6 +16,8 @@ void setup() {
 
   positionX = 0;
   velocityX = 3;
+  positionY = 0;
+  velocityY = 3;
 }
 
 void draw() {
@@ -21,12 +25,16 @@ void draw() {
   fill(0);      // fill changes the color of the interior of the shape
   noStroke();   // noStroke removes the outer line
 
-  ellipse(positionX, height/2, ballDiameter, ballDiameter);
+  ellipse(positionX, positionY, ballDiameter, ballDiameter);
   positionX += velocityX;
-  
+  positionY += velocityY;
+
 
   // && means "and"
   if ((velocityX > 0 && positionX > width - ballDiameter/2) || (velocityX < 0 && positionX < ballDiameter/2))
     velocityX = -velocityX;
- 
+
+  if ((velocityY > 0 && positionY > height - ballDiameter/2) || 
+      (velocityY < 0 && positionY < ballDiameter/2))
+    velocityY = -velocityY;
 }
