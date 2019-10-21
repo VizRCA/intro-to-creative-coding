@@ -27,7 +27,7 @@ class Eye {
   
   // Constructor with full arguments
   Eye(float x, float y, float eyeDiameter, float pupilDiameter, color eyeColor) {
-    // TODO #4: Implement this constructor
+    // TODO #4: Implement this constructor so array of eyes can be more interesting.
   }
   
   // Move the eye to a particular location
