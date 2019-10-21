@@ -4,9 +4,9 @@ Introduction to Creative Coding
 8 week modular course to creative coding using Processing and Arduino, topics covered in each week are as follows:
 
 + [Week 1 - Course overview and using the Processing IDE](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w01)
-+ Week 2 - Drawing with algorithms; OpArt etc with Processing
-+ Week 3 - Interaction and Basic Object Oriented Programming (OOP)
-+ Week 4 -  Animation, Sound and Image with Processing
++ Week 2 - [Drawing with algorithms; OpArt etc with Processing](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w02)
++ Week 3 - [Animation, Interaction and Basic Object Oriented Programming (OOP)](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w03)
++ Week 4 - [Image, Video and Camera with Processing](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w04)
 + Week 5 - Using libraries, data, and code from the internet
 + Week 6 - Arduino intro
 + Week 7 - Connecting Arduino and Processing
