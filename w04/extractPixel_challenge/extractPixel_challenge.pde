@@ -16,27 +16,32 @@ void setup ( ) {
   //load image
   img = loadImage ("durhamSquareSMALL.jpg"); //
 
-  // cycle through ALL pixels in the image
-  // the 'nested' for loop cycles through the image a row at a time.
-  for (int y=0; y<img.height; y++) { 
-    for (int x=0; x<img.width; x++) {
+  // TODO 1: cycle through ALL pixels in the image
+  // use a 'nested' for loop cycles through the image a row at a time.
+  for (int y=0; y<0; y++) { 
+    for (int x=0; x<0; x++) {
 
-      // get the color of current pixel 
-      color c = img.get(x, y); 
+      // TODO 2: get the color of current pixel, replace below with a pixel from the image
+      color c = color(0); // <- replpace the color(0)
       
       // get the brightness value of the color (between 0 and 255)
       float brightValue = brightness(c); 
-      // use map() to convert the brightness value to a number between 0.1 and 10.
+      
+      // TODO 3: 
+      // use map() to convert the brightness value to a number between 0.1 and 10, convert 0-255 to 10-0.1
       // where high brightness produces the lowest numbers.
       // this number will be used to set the size of each circle.
-      float size = map (brightValue, 0, 255, 10, 0.1); // convert 0-255 to 10-0.1
+      // if you don't know map() check the reference.
+      float size = 0;  // <- replpace the 0
 
       // use color of the pixel as the fill color 
       fill (c); 
       
-      // draw a circle - using the size value as defined by the brightness of the color.
-      ellipse (x*spacing, y*spacing, size, size);
+      // TODO 4:
+      // draw a circle - using the size value as defined by the brightness of the color,
+      // and set the position using the pixel coordinate and the spacing variable.
+      
     }
   }
-  saveFrame("output.png");
+  
 }
