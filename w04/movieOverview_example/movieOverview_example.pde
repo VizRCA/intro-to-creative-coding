@@ -1,89 +1,79 @@
-// P_4_2_2_01.pde
-// 
-// Generative Gestaltung, ISBN: 978-3-87439-759-9
-// First Edition, Hermann Schmidt, Mainz, 2009
-// Hartmut Bohnacker, Benedikt Gross, Julia Laub, Claudius Lazzeroni
-// Copyright 2009 Hartmut Bohnacker, Benedikt Gross, Julia Laub, Claudius Lazzeroni
-//
-// http://www.generative-gestaltung.de
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 /**
  * simple overview of a video file.
  * 
  * KEYS
- * s                  : save png
+ * right arrow : move forward a frame
+ * left arrow : move backward a frame
  */
 
 import processing.video.*;
 import java.util.Calendar;
 
-Movie movie;
+import processing.video.*;
 
-// horizontal and vertical grid count
-// take care of the aspect ratio ... here 4:3
-int tileCountX = 12;
-int tileCountY = 16;
-float tileWidth, tileHeight;
-int imageCount = tileCountX*tileCountY; 
-int currentImage = 0;
-int gridX = 0;
-int gridY = 0;
-
+Movie mov;
+int newFrame = 0;
 
 void setup() {
-  size(1024, 1024);
-  smooth();
-  background(0); 
-
-  // specify a path or use selectInput() to load a video
-  // or simply put it into the data folder
-  String path = "../video/HL2_copDancing_chroma.mp4";
-  movie = new Movie(this, path);
-  movie.play();
-
-  tileWidth = width / (float)tileCountX;
-  tileHeight = height / (float)tileCountY;
+  size(640, 360);
+  background(0);
+  // Load and set the video to play. Setting the video 
+  // in play mode is needed so at least one frame is read
+  // and we can get duration, size and other information from
+  // the video stream. 
+  mov = new Movie(this, "transit.mov");  
+  
+  // Pausing the video at the first frame. 
+  mov.play();
+  mov.jump(0);
+  mov.pause();
 }
 
+void movieEvent(Movie m) {
+  m.read();
+}
 
 void draw() {
-  float posX = tileWidth*gridX;
-  float posY = tileHeight*gridY;
+  background(0);
+  image(mov, 0, 0, width, height);
+  fill(255);
+  text(getFrame() + " / " + (getLength() - 1), 10, 30);
+}
 
-  // calculate the current time in movieclip
-  float moviePos = map(currentImage, 0,imageCount, 0,movie.duration());
-  movie.jump(moviePos);
-  movie.read();
-  image(movie, posX, posY, tileWidth, tileHeight);
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == LEFT) {
+      if (0 < newFrame) newFrame--; 
+    } else if (keyCode == RIGHT) {
+      if (newFrame < getLength() - 1) newFrame++;
+    }
+  } 
+  setFrame(newFrame);  
+}
+  
+int getFrame() {    
+  return ceil(mov.time() * 30) - 1;
+}
 
-  // new grid position
-  gridX++;
-  if (gridX >= tileCountX) {
-    gridX = 0;
-    gridY++;
+void setFrame(int n) {
+  mov.play();
+    
+  // The duration of a single frame:
+  float frameDuration = 1.0 / mov.frameRate;
+    
+  // We move to the middle of the frame by adding 0.5:
+  float where = (n + 0.5) * frameDuration; 
+    
+  // Taking into account border effects:
+  float diff = mov.duration() - where;
+  if (diff < 0) {
+    where += diff - 0.25 * frameDuration;
   }
+    
+  mov.jump(where);
+  mov.pause();  
+}  
 
-  currentImage++;
-  if (currentImage >= imageCount) noLoop();
-}
-
-
-void keyReleased() {
-  if (key == 's' || key == 'S') saveFrame(timestamp()+"_##.png");
-}
-
-
-// timestamp
-String timestamp() {
-  Calendar now = Calendar.getInstance();
-  return String.format("%1$ty%1$tm%1$td_%1$tH%1$tM%1$tS", now);
+int getLength() {
+  return int(mov.duration() * mov.frameRate);
 }
