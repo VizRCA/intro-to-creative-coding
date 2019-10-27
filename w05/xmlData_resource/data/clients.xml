@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<client_list>
+	<person> 
+ 	 <name>andrew</name>
+ 	 <age>42</age>
+ 	 <address>
+		<street>main street</street>
+		<town>durham</town>
+ 	 </address>
+	</person> 
+
+	<person> 
+ 	 <name>bill</name>
+ 	 <age>34</age>
+ 	 <address>
+		<street>high road</street>
+		<town>manchester</town>
+ 	 </address>
+	</person> 
+</client_list> 
