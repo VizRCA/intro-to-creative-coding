@@ -14,12 +14,17 @@ void setup ( ) {
   size (650, 450);
   background (255);
   colorMode(HSB, 255, 255, 255, 100);
-  // load table data, it uses a header in the file.
-  table = loadTable ("userData.csv", "header"); 
-
+  
+  readData();
   printTable();
   computeColumnMinMax();
   plotTable();
+}
+
+void readData()
+{
+  // load table data, it uses a header in the file.
+  table = loadTable ("userData.csv", "header"); 
 }
 
 void printTable()
