@@ -45,42 +45,39 @@ void computeColumnMinMax()
   // You can get a whole column of numbers using the command
   // table.getFloatColumn("columnName");
   // table.getIntColumn("columnName");
-  float[] durations = table.getFloatColumn("duration");
-  dMax = max(durations);
-  dMin = min(durations);
+  // use processing min and max commands
+  
+  dMax = 0;
+  dMin = 0;
 
-  float[] lengths = table.getFloatColumn("length");
-  lMax = max(lengths);
-  lMin = min(lengths);
+  
+  lMax = 0;
+  lMin = 0;
 
-  float[] vels = table.getFloatColumn("avgVelocity");
-  vMax = max(vels);
-  vMin = min(vels);
+  
+  vMax = 0;
+  vMin = 0;
 }
 
 void plotTable()
 {
   // Get all the locations from the data, map them, and plot values on screen
   for (int i=0; i<table.getRowCount(); i++) { 
-    TableRow row = table.getRow (i); // get current row
-    int id = row.getInt("id");
-    float  d = row.getFloat ("duration"); // gets the 1st item in the row
-    float  l = row.getFloat ("length"); // gets the 2nd item in the row
-    float  v = row.getFloat ("avgVelocity"); // gets the 3rd item in the row
+    // get current row
+    
+    // get values from the row for each variable
 
-
-    float cm = ((float)id/(table.getRowCount())) * 255;
+    // Map id to hue, as propotrion of total number of rows.
+    float cm = 0;
 
     // Use the map function to place x and y of circle
-    float x = map(d, dMin, dMax, 30, width-30);
-    float y = map(l, lMin, lMax, height-30, 30);
-    float s = map(v, vMin, vMax, 5, 35);
+    float x = 0;
+    float y = 0;
+    float s = 0;
 
     // draw circle at location 
     fill (cm, 200, 134, 75);
     stroke(25, 50, 25, 50);
     ellipse (x, y, s, s);
   }
-
-  saveFrame("output.png");
 }
