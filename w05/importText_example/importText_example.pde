@@ -32,7 +32,8 @@ void draw() {
     // Random place along width, always within frame
     float xpos = random(80, width/2);
     // Map line number vertically to frame height
-    float ypos = 20+((float)i/lines.length*height);
+    float ypos = map(i , 0, lines.length, 20, height);
+    // float yposs = 20+((float)i/lines.length*height);
     text (lines[i], xpos, ypos); 
 
     // Iterate and wrap the line index

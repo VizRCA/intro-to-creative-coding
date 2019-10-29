@@ -9,6 +9,7 @@
 
 Table table; 
 float dMax, dMin, lMax, lMin, vMax, vMin;
+int id;
 
 void setup ( ) { 
   size (650, 450);
@@ -32,7 +33,7 @@ void printTable()
   // check row data and output values
   for (int i=0; i<table.getRowCount(); i++) {
     TableRow row1 = table.getRow (i); // get 1st row
-    int id = row1.getInt("id");
+    id = row1.getInt("id");
     float  d = row1.getFloat ("duration"); // gets the 1st item in the row
     float  l = row1.getFloat ("length"); // gets the 2nd item in the row
     float  v = row1.getFloat ("avgVelocity"); // gets the 3rd item in the row
@@ -46,17 +47,17 @@ void computeColumnMinMax()
   // table.getFloatColumn("columnName");
   // table.getIntColumn("columnName");
   // use processing min and max commands
-  
-  dMax = 0;
-  dMin = 0;
+  float[] durations = table.getFloatColumn("duration");
+  dMax = max(durations);
+  dMin = min(durations);;
 
-  
-  lMax = 0;
-  lMin = 0;
+  float[] lengths = table.getFloatColumn("length");
+  lMax = max(lengths);
+  lMin = min(lengths);
 
-  
-  vMax = 0;
-  vMin = 0;
+  float[] vels = table.getFloatColumn("avgVelocity");
+  vMax = max(vels);
+  vMin = min(vels);
 }
 
 void plotTable()
@@ -64,16 +65,22 @@ void plotTable()
   // Get all the locations from the data, map them, and plot values on screen
   for (int i=0; i<table.getRowCount(); i++) { 
     // get current row
-    
+    TableRow row = table.getRow (i); // get current row
+    id = row.getInt("id");
+    print(id);
     // get values from the row for each variable
+    float  d = row.getFloat ("duration"); // gets the 1st item in the row
+    float  l = row.getFloat ("length"); // gets the 2nd item in the row
+    float  v = row.getFloat ("avgVelocity"); // gets the 3rd item in the row
 
     // Map id to hue, as propotrion of total number of rows.
-    float cm = 0;
+    
+    float cm = ((float)id/float(table.getRowCount())) * 255;
 
     // Use the map function to place x and y of circle
-    float x = 0;
-    float y = 0;
-    float s = 0;
+    float x = map(d, dMin, dMax, 30, width-30);
+    float y = map(l, lMin, lMax, height-30, 30);
+    float s = map(v, vMin, vMax, 5, 35);
 
     // draw circle at location 
     fill (cm, 200, 134, 75);
