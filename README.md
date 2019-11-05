@@ -8,7 +8,7 @@ Introduction to Creative Coding
 + Week 3 - [Animation, Interaction and Basic Object Oriented Programming (OOP)](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w03)
 + Week 4 - [Image, Video and Camera with Processing](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w04)
 + Week 5 - Using libraries, data, and code from the internet
-+ Week 6 - Arduino intro
++ Week 6 - [Arduino intro](https://github.com/JohnMechatronics/Introduction-To-Arduino) - Week six is handled by the mechatronics team, so the content is held on another github repo.
 + Week 7 - Connecting Arduino and Processing
 + Week 8 - Using Open Sound Control (OSC) for multiple app communication
 
