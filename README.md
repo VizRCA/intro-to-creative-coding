@@ -3,13 +3,13 @@ Introduction to Creative Coding
 
 8 week modular course to creative coding using Processing and Arduino, topics covered in each week are as follows:
 
-+ [Week 1 - Course overview and using the Processing IDE](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w01)
++ Week 1 - [Course overview and using the Processing IDE](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w01)
 + Week 2 - [Drawing with algorithms; OpArt etc with Processing](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w02)
 + Week 3 - [Animation, Interaction and Basic Object Oriented Programming (OOP)](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w03)
 + Week 4 - [Image, Video and Camera with Processing](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w04)
 + Week 5 - Using libraries, data, and code from the internet
 + Week 6 - [Arduino intro](https://github.com/JohnMechatronics/Introduction-To-Arduino) - Week six is handled by the mechatronics team, so the content is held on another github repo.
-+ Week 7 - Connecting Arduino and Processing
++ Week 7 - [Connecting Arduino and Processing](https://github.com/VizRCA/intro-to-creative-coding/blob/master/w07)
 + Week 8 - Using Open Sound Control (OSC) for multiple app communication
 
 Assembled by Thomas Deacon, 2019
