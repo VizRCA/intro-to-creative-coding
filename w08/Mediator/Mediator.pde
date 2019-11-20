@@ -24,7 +24,8 @@ String[] defaultOscCommands = new String[]{
   "/quad/1/visible", 
   "/quad/2/visible", 
   "/quad/3/visible", 
-  "/quad/4/visible"
+  "/quad/4/visible",
+  "/quad/1/opacity"
 };
 
 void setup() {
@@ -34,7 +35,7 @@ void setup() {
 
   /* start oscP5, listening for incoming messages at port  12000*/
   oscP5 = new OscP5(this, 7777); //listen to itself for testing
-  dest = new NetAddress("127.0.0.1", 13000); // Mapmapper
+  dest = new NetAddress("127.0.0.1", 8010); // Mapmapper
 }
 
 void draw()
